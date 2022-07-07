@@ -1,0 +1,53 @@
+
+<div class="movie-container">
+  <div class="top">
+    <div class="left">
+      <div class="name">{{ movie?.name }}</div>
+      <div class="rating">
+        <app-star-rating
+          [rating]="movie?.rating"
+          [isReadOnly]="true"
+        ></app-star-rating>
+        <span class="rating-value">{{ movie?.rating }}</span>
+      </div>
+      <div class="cover">
+        <img [src]="movie?.cover" alt="" />
+      </div>
+    </div>
+     <div class="right">
+      <div class="title">Rate this movie</div>
+      <div class="rating-form">
+        <form #frm="ngForm" (ngSubmit)="addto(frm.value)" >
+          <p>Name</p>
+          <p><input type="text" name="author" ngModel></p>
+          <p>Review</p>
+          <p><input type="text" name="review" ngModel></p>
+          <p><input type="submit" name="save" value="Save"></p>
+        </form>
+  <div class="bottom">
+    <h4 class="title">Reviews</h4>
+    <div class="reviews" *ngIf="movie?.reviews?.length > 0">
+      <div class="review" *ngFor="let review of movie?.reviews">
+        <div class="review-details">
+          <div class="review-left">
+            <div class="author">{{ review.author }}</div>
+          </div>
+          <div class="review-right">
+            <div class="rating">
+              <app-star-rating
+                [rating]="review.rating"
+                [isReadOnly]="true"
+              ></app-star-rating>
+              <span class="rating-value">{{ review.rating }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-text"></div>{{ review.review }}
+      </div>
+    </div>
+    <div class="reviews" *ngIf="movie?.reviews?.length === 0">
+      <div class="no-reviews">No reviews yet</div>
+    </div>
+  </div>
+</div>
+
