@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { MovieComponent } from './component/movie/movie.component';
 import { StarRatingComponent } from '../app/component/star-rating/star-rating.component';
+import { LoginComponent } from './component/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     StarRatingComponent,
     MovieComponent,
+    LoginComponent,
+
 
   ],
   imports: [

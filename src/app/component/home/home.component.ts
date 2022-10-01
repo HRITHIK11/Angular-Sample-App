@@ -8,39 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  trendingMovies: any;
-  theatreMovies: any;
-  popularMovies: any;
+  Fuel: any;
+  Best: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
-    this.getTrendingMovies();
-    this.getTheatreMovies();
-    this.getPopularMovies();
+    this.getFuel();
+    this.getBest();
   }
 
-  getTrendingMovies() {
+  getFuel() {
     this.http
-      .get('http://localhost:3000/trending-movies')
+      .get('http://localhost:3000/Fuel')
       .subscribe((movies) => {
-        this.trendingMovies = movies;
+        this.Fuel= movies;
       });
   }
 
-  getTheatreMovies() {
+  getBest() {
     this.http
-      .get('http://localhost:3000/theatre-movies')
+      .get('http://localhost:3000/Best')
       .subscribe((movies) => {
-        this.theatreMovies = movies;
-      });
-  }
-
-  getPopularMovies() {
-    this.http
-      .get('http://localhost:3000/popular-movies')
-      .subscribe((movies) => {
-        this.popularMovies = movies;
+        this.Best = movies;
       });
   }
 
