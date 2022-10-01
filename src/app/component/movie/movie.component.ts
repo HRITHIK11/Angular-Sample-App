@@ -12,8 +12,8 @@ export class MovieComponent implements OnInit {
   type = '';
   id = '';
   url = '';
-  movies: any;
-  movie: any;
+  bikes: any;
+  bike: any;
   reviews=[];
   
 
@@ -24,13 +24,10 @@ export class MovieComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.reviews = this.route.snapshot.params['reviews'];
     if (this.type === 'trending') {
-      this.url = 'http://localhost:3000/trending-movies';
+      this.url = 'http://localhost:3000/Fuel';
     }
     if (this.type === 'theatre') {
-      this.url = 'http://localhost:3000/theatre-movies';
-    }
-    if (this.type === 'popular') {
-      this.url = 'http://localhost:3000/popular-movies';
+      this.url = 'http://localhost:3000/Best';
     }
     this.getMovie();
   }
@@ -38,13 +35,13 @@ export class MovieComponent implements OnInit {
 
  
   getMovie() {
-    this.http.get(this.url).subscribe((movies) => {
-      this.movies = movies;
-      let index = this.movies.findIndex(
+    this.http.get(this.url).subscribe((bikes) => {
+      this.bikes = bikes;
+      let index = this.bikes.findIndex(
         (movie: { id: string }) => movie.id == this.id
       );
       if (index > -1) {
-        this.movie = this.movies[index];
+        this.bike = this.bikes[index];
       }
     });
   }
@@ -67,7 +64,6 @@ export class MovieComponent implements OnInit {
   }
   updateMovie(id:any,data:any){
     let url = `http://localhost:3000/${this.type}-movies`
-    http://localhost:3000/popular-movies?id=
     return this.http.post(`${this.url}/?id=${id}`,data)
   }
 }
