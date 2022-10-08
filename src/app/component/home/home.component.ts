@@ -21,16 +21,16 @@ export class HomeComponent implements OnInit {
   getFuel() {
     this.http
       .get('http://localhost:3000/Fuel')
-      .subscribe((movies) => {
-        this.Fuel= movies;
+      .subscribe((bikes) => {
+        this.Fuel= bikes;
       });
   }
 
   getBest() {
     this.http
       .get('http://localhost:3000/Best')
-      .subscribe((movies) => {
-        this.Best = movies;
+      .subscribe(( bikes) => {
+        this.Best =  bikes;
       });
   }
 
