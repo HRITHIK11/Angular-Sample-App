@@ -12,13 +12,13 @@
           </div>
           <div class="detail">
             <div class="name" (click)="goToMovie('trending', movie.id)">{{ movie.name }}</div>
-            <div class="rating">
+            <!-- <div class="rating">
               <span class="rating-value">{{ movie.rating }}</span>
               <app-star-rating
                 [rating]="movie.rating"
                 [isReadOnly]="true"
               ></app-star-rating>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -34,13 +34,13 @@
           </div>
           <div class="detail">
             <div class="name" (click)="goToMovie('theatre', movie.id)">{{ movie.name }}</div>
-            <div class="rating">
+            <!-- <div class="rating">
               <span class="rating-value">{{ movie.rating }}</span>
               <app-star-rating
-                [rating]="movie.rating"
+                [rating]="bike.rating"
                 [isReadOnly]="true"
               ></app-star-rating>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -53,8 +53,8 @@
     <footer><br></footer>
     
     
-    <footer>Reach out us at: Easybikes@gmail.com,<br>
-   whatsapp @ 9988823939.
+    <footer><b>Reach out us at: Easybikes@gmail.com,</b> <br>
+   <b>whatsapp @ 9988823939.</b>
     </footer>
   </div>
 

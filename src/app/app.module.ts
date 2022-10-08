@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
-import { MovieComponent } from './component/movie/movie.component';
+import { BikeComponent } from './component/bike/bike.component';
 import { StarRatingComponent } from '../app/component/star-rating/star-rating.component';
 import { LoginComponent } from './component/login/login.component';
 @NgModule({
@@ -13,7 +13,7 @@ import { LoginComponent } from './component/login/login.component';
     AppComponent,
     HomeComponent,
     StarRatingComponent,
-    MovieComponent,
+    BikeComponent,
     LoginComponent,
 
 
